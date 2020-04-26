@@ -23,6 +23,11 @@ header {
       &:hover {
         color: #a4a5ad;
       }
+
+      &.--active {
+        color: #a4a5ad;
+      }
+
       .logo {
         width: 65%;
         height: auto;

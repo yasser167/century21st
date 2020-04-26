@@ -19,7 +19,18 @@ export default class Modal {
     }
 
     fetchOneComment( id ) {
-        fetch( API.oneComment.replace('id', id) )
+        let options = {
+            method: 'GET',
+            mode: 'no-cors',
+            cache: 'no-cache',
+            credentials: 'include',
+            method: 'PATCH',
+            headers: {
+              'Content-Type': 'application/json',
+            }
+        };
+
+        fetch( API.oneComment.replace('id', id), options )
         .then( (res) => {
             res.json( res ).then( (comment ) => {
                 console.log( comment );
