@@ -1,0 +1,104 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 200ms;
+
+    &.--open {
+        z-index: 5;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .modal-overlay {    
+        position: absolute;
+        background: #000;
+        opacity: .8;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .modal-body {
+        // width: 80%;
+        // height: 80%;
+        padding: 1rem;
+        background: #eee;
+        max-width: 90%;
+        max-height: 80%;
+        position: relative;
+        // display: block;
+        border-radius: 4px;
+        animation: border-animation 4s infinite;
+
+        .modal-container {
+            overflow-y: auto;
+            max-height: 100%;
+            
+            .modal-close-button {
+                position: absolute;
+                top: -1.5rem;
+                right: -1.5rem;
+                border-radius: 50%;
+                background: red;
+                border: 1px solid #eee;
+                padding: 1rem .5rem;;
+                font-size: 1rem;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            .modal-body-title {
+                font-family: 'English-Title';
+                h2 {
+                    text-transform: capitalize;
+                    font-size: 3rem;
+                }
+            }
+
+            .modal-content {
+                min-height: 200px;
+                iframe {
+                    position: absolute;
+                    top: 1rem;
+                    top: 20%;
+                    bottom: 20%;
+                    left: 0;
+                    right: 0;
+                    width: 95%;
+                    height: 70%;
+                    margin: auto;
+                    background: #FFFFFF;
+                }
+
+            }
+
+            .modal-actions {
+                
+                position: absolute;
+                top: auto;
+                bottom: -0.5rem;
+                left: 0;
+                right: 0;
+                width: 30%;
+                margin: auto;
+
+                .button {
+                    margin: 1rem auto;
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,131 @@
+@font-face {
+  font-family: 'Title';
+  src: url('./fonts/Baloo_Paaji_2/BalooPaaji2-Bold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Content';
+  src: url('./fonts/Ubuntu/Ubuntu-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$primary: #08524e;
+$secondary: #466c31;
+
+body {
+  color: #000; 
+  text-align: center;
+  margin: 0;
+  font-family: 'Content';
+  font-size: 1.5rem;
+  overflow-x: hidden;
+  
+  &.--white {
+    background-color: #FFFFFF;
+  }
+
+  &.--ready {
+    .loading-overlay {
+      visibility: hidden;
+      opacity: 0;
+      z-index: -2;
+      transition: 200ms;
+    }
+  }
+  &.--loading {
+    .loading-overlay {
+      visibility: visible;
+      opacity: 1;
+      z-index: 1672;
+      transition: 200ms;
+    }
+  }
+  &.--no-loading {
+    .loading-overlay {
+      visibility: hidden;
+      opacity: 0;
+      z-index: -2;
+      transition: 200ms;
+    }
+  }
+
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+  *::-webkit-scrollbar-track {
+    background: $primary; 
+  }
+  *::-webkit-scrollbar-thumb {
+    background: $secondary; 
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+  }
+
+  h1, h2, h3, h4, p {
+    margin: 0;
+  }
+
+  span[path] {
+    cursor: pointer;
+    font-family: 'Title';
+
+    &:hover {
+      transform: scale(1.05);
+      transition: 100ms;
+    }
+  }
+
+  .loading-overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 167;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 300px;
+      animation: loading-animation 1s infinite;
+    }
+
+    p {
+     &.loading-text {
+       font-size: 2rem;
+       font-weight: 600;
+       margin: 0 0 1rem 0;
+      } 
+    }
+  }
+
+  .imported-content-wrapper {
+    // position: absolute;   
+    // top: 2rem;
+    // bottom: 0.5rem;
+    // right: 0;
+    // left: 0;    
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+    z-index: 1;
+
+    [class*="imported-content"] {
+      width: 100%;
+    }
+  }
+  
+  i.material-icons::before {
+    content: attr(icon);
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    display: block;
+  }
+
+}

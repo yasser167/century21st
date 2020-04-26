@@ -1,0 +1,16 @@
+RewriteEngine On
+# RewriteCond %{HTTP_REFERER} !^$
+# RewriteCond %{HTTP_REFERER} !^http(s)?://(.+\.)?https://yasserzaky\.netlify\.com [NC]
+# RewriteRule .*\.(jp(e)?g|gif|bmp|png)$ https://imgur.com/ZtXiCBw.gif [L,R]
+
+# RewriteCond %{REQUEST_FILENAME}\.html -f
+# RewriteRule ^(.*)$ $1.html
+
+# RewriteBase     /
+# RewriteRule     /mailer.php    http://yasser.xyz/contact/? [R=301,L]
+
+ RewriteCond %{REQUEST_FILENAME} !-d
+ RewriteCond %{REQUEST_FILENAME} !-f
+ RewriteRule (.*) index.html
+
+# RedirectMatch 404 /\.git

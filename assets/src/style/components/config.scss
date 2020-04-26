@@ -1,0 +1,38 @@
+// @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+
+// Material Icons
+$material-icons-font-path: '~material-icons/iconfont/';
+ 
+@import '~material-icons/iconfont/material-icons.scss';
+
+
+
+$default-font: 'Lato', sans-serif;
+$logo-font: 'Righteous', cursive;
+
+// variables
+$color-white: #eee;
+$color-black: #444;
+$color-grey: #838383;
+$color-brand-primary: #FF6976;
+$color-brand-primary-diff: $color-white;
+$color-brand-secondary: #2F80ED;
+$color-brand-secondary-diff: $color-white;
+
+// shadows
+$shadow-default: 2px 2px 5px #0001;
+$shadow-high: 2px 2px 7px #0004;
+$shadow-float: 2px 2px 10px #0004;
+@mixin shadow($shadow: $shadow-default) {
+    transition: box-shadow 160ms;
+    box-shadow: $shadow;
+}
+
+$media-screen: (min-width: 1367px);
+$media-display: (min-width:1025px) and (max-width:1366px);
+$media-laptops: (min-width:1025px) and (max-width: 1284px);
+$media-tablet: (max-width:1024px);
+$media-mobile: (max-width:480px);
+$media-iPhone6-6Plus: (width:375px) and (width:414px);
+$media-iPhone5: (max-width:320px);

@@ -1,0 +1,32 @@
+.card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: calc( 50% - 3rem);
+    margin: 1rem;
+    box-shadow: 4px 8px 18px -5px rgba(0, 0, 0, 0.2);
+    padding: .5rem;
+    cursor: pointer;
+    transition: all 100ms;
+
+    &:hover {
+        transform: scale(1.01);
+        box-shadow: 4px 8px 18px -5px rgba(0, 0, 0, 0.5);
+    }
+
+    .comment-user {
+        margin: 0 1rem 0 0;
+        opacity: 0.4;
+    }
+
+    .comment-details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        p {
+            margin: .5rem 0;
+            text-align: start;
+        }
+    }
+}

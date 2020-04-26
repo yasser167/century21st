@@ -1,0 +1,19 @@
+html {
+    body {
+        &.--lowResLaptop {
+            zoom: 0.8;
+        }
+        &.--oldLaptop {
+            zoom: 0.8;
+        }
+        &.--reallyOldLaptop {
+            zoom: 0.6;
+        }
+        &.--seriouslyOldLaptop {
+            zoom: 0.5;
+        }
+        &.--OMGchangeYourLaptop {
+            zoom: 0.5;
+        }
+    }
+}
