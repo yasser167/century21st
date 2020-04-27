@@ -13,9 +13,7 @@ export default class Modal {
     openModal( cardAttr ) {
         let body = this.body;
         let isMobile = body.classList.contains('--mobile') ? true : false;
-        
         this.fetchOneComment( cardAttr.id );
-        document.querySelector(`.modal`).classList.add('--open');
     }
 
     fetchOneComment( id ) {
@@ -28,8 +26,15 @@ export default class Modal {
                 this.modalDOM.querySelector(".comment-video").setAttribute('src', comment.video);
                 if( comment.video !== undefined ) {
                     this.modalDOM.querySelector(".comment-video").classList.remove('hidden');
+                } else {
+                    this.modalDOM.querySelector(".comment-video").classList.add('hidden');
                 }
+
+                document.querySelector(`.modal`).classList.add('--open');
             })
+        })
+        .catch( (err) => {
+            this.modalDOM.querySelector(".comment-title").innerHTML = err;
         })
     }
 

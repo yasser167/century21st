@@ -5,8 +5,24 @@
         margin: 2rem 0;
         
         .comments-wrapper {
-            width: 80%;
+            width: 100%;
             margin: auto;
         }
     }
+}
+
+// Tablet Style
+@media #{$media-tablet} {
+    .imported-content-homepage {
+        .homepage {
+            .comments-wrapper {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// Mobile Style
+@media #{$media-mobile} {
+
 }

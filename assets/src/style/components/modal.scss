@@ -31,14 +31,11 @@
     }
 
     .modal-body {
-        // width: 80%;
-        // height: 80%;
         padding: 1rem;
         background: #eee;
-        max-width: 90%;
+        max-width: 40%;
         max-height: 80%;
         position: relative;
-        // display: block;
         border-radius: 4px;
         animation: border-animation 4s infinite;
 
@@ -69,36 +66,38 @@
 
             .modal-content {
                 min-height: 200px;
-                iframe {
-                    position: absolute;
-                    top: 1rem;
-                    top: 20%;
-                    bottom: 20%;
-                    left: 0;
-                    right: 0;
-                    width: 95%;
-                    height: 70%;
-                    margin: auto;
-                    background: #FFFFFF;
-                }
-
-            }
-
-            .modal-actions {
-                
-                position: absolute;
-                top: auto;
-                bottom: -0.5rem;
-                left: 0;
-                right: 0;
-                width: 30%;
-                margin: auto;
-
-                .button {
-                    margin: 1rem auto;
+                .comment-video {
+                    width: 100%;
                 }
             }
+        }
+    }
+}
 
+
+// Tablet Style
+@media #{$media-tablet} {
+    .modal {
+        .modal-body {
+            max-width: 80%;
+            .modal-content {
+                .comment-video {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// Mobile Style
+@media #{$media-mobile} {
+    .modal {
+        .modal-body {
+            .modal-content {
+                .comment-video {
+                    width: 100%;
+                }
+            }
         }
     }
 }

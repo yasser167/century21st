@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: calc( 50% - 3rem);
+    width: calc( 50% - 4rem);
     margin: 1rem;
     box-shadow: 4px 8px 18px -5px rgba(0, 0, 0, 0.2);
     padding: .5rem;
@@ -28,5 +28,20 @@
             margin: .5rem 0;
             text-align: start;
         }
+    }
+}
+
+
+// Tablet Style
+@media #{$media-tablet} {
+    .card {
+        // width: 100%;
+    }
+}
+
+// Mobile Style
+@media #{$media-mobile} {
+    .card {
+        width: 100%;
     }
 }

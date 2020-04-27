@@ -11,9 +11,18 @@ export default class General {
 
 	general() {
 		let body = this.body;
-		let currentURL = new URL(document.URL);
-
-		let pathElements = document.querySelectorAll('[path*="path"]')
+        let currentURL = new URL(document.URL);
+        let menuBtn = document.querySelectorAll('.menu-button');
+		let pathElements = document.querySelectorAll('[path*="path"]');
+        
+        menuBtn.forEach( button => {
+            button.addEventListener('click', ev => {
+                let currentURL = ev.currentTarget;
+                body.classList.toggle('--menu-open');
+            })
+        })
+        
+		
         pathElements.forEach(element => {
             let refPath = element.getAttribute('path').replace('path-', '');
             let pathURL;

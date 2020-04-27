@@ -55,7 +55,7 @@ export default class Card {
                 
                 ev.preventDefault();
 
-                console.log( cardAttr );
+                // console.log( cardAttr );
                 new Modal(cardAttr);
             });
         });
