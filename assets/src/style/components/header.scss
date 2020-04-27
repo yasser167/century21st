@@ -59,6 +59,15 @@ header {
   opacity: 0;
   z-index: -1;
   transition: all 200ms;
+  .menu-content {
+    .header-item {
+      font-size: 2rem;
+      font-weight: 200;
+      &.--active {
+        color: #a4a5ad;
+      }
+    }
+  }
   .menu-button {
     background-color: red;
     border: 1px solid #ddd;
@@ -127,7 +136,7 @@ header {
     .menu-content {
       height: 70%;
       .header-item {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
       }
       .menu-button {
         &::before {
