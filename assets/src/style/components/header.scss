@@ -22,18 +22,15 @@ header {
       &:hover {
         color: #a4a5ad;
       }
-
       &.--active {
         color: #a4a5ad;
       }
-
       .logo {
         width: 65%;
         height: auto;
         margin: auto;
         padding: .25rem 0 0 0;
       }
-
       [path] {
         font-size: 2rem;
         margin: 0 1rem;
@@ -87,13 +84,19 @@ header {
         display: none;
       }
       .header-item {
-        .logo {
-          width: 25%;
-          margin: unset;
+        &[path=path-homepage] {
+          width: 30%;
+          .logo {
+            // width: 25%;
+            margin: unset;
+          }
         }
       }
       .menu-button {
         display: block;
+        &::before {
+          font-size: 3rem;
+        }
       }
 
       .menu {
@@ -110,11 +113,26 @@ header {
 
 // Mobile Style
 @media #{$media-mobile} {
+  header {
+    .header-wrapper {
+      .header-item{
+        &[path=path-homepage] {
+          width: 60%;
+        }
+      }
+    }
+  }
+
   .menu {
     .menu-content {
       height: 70%;
       .header-item {
         font-size: 1.5rem;
+      }
+      .menu-button {
+        &::before {
+          font-size: 2rem;
+        }
       }
     }
   }
