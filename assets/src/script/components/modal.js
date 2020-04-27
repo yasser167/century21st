@@ -24,7 +24,6 @@ export default class Modal {
             mode: 'no-cors',
             cache: 'no-cache',
             credentials: 'include',
-            method: 'PATCH',
             headers: {
               'Content-Type': 'application/json',
             }
