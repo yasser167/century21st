@@ -19,23 +19,16 @@ export default class Modal {
     }
 
     fetchOneComment( id ) {
-        let options = {
-            method: 'GET',
-            mode: 'no-cors',
-            cache: 'no-cache',
-            credentials: 'include',
-            headers: {
-              'Content-Type': 'application/json',
-            }
-        };
-
-        fetch( API.oneComment.replace('id', id), options )
+        fetch( API.oneComment.replace('id', id) )
         .then( (res) => {
             res.json( res ).then( (comment ) => {
                 console.log( comment );
                 this.modalDOM.querySelector(".comment-title").innerHTML = comment.title;
                 this.modalDOM.querySelector(".comment-desc").innerHTML = comment.content;
                 this.modalDOM.querySelector(".comment-video").setAttribute('src', comment.video);
+                if( comment.video !== undefined ) {
+                    this.modalDOM.querySelector(".comment-video").classList.remove('hidden');
+                }
             })
         })
     }
